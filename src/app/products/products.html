@@ -1,0 +1,67 @@
+<div class="container py-5">
+  <h1 class="mb-4">Our Products</h1>
+  <p class="lead mb-5">Browse our selection of high-performance graphics cards</p>
+
+  <div class="row g-4">
+    @for (product of products; track product.id) {
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img [src]="product.imageUrl" [alt]="product.name" class="card-img-top product-image" />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ product.manufacturer }}</h6>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">
+              <small class="text-muted">VRAM: {{ product.vram }}</small>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="h4 mb-0 text-primary">${{ product.price | number:'1.0-0' }}</span>
+              @if (product.inStock) {
+                <span class="badge bg-success">In Stock</span>
+              } @else {
+                <span class="badge bg-danger">Out of Stock</span>
+              }
+            </div>
+            <div class="mt-3">
+              @if (product.inStock) {
+                <button class="btn btn-primary w-100">Add to Cart</button>
+              } @else {
+                <button class="btn btn-secondary w-100" disabled>Notify Me</button>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="mt-5">
+    <h3>Product Categories</h3>
+    <div class="row g-3 mt-3">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Gaming GPUs</h5>
+            <p class="card-text">High-performance graphics cards optimized for gaming</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Professional GPUs</h5>
+            <p class="card-text">Workstation-class GPUs for content creation and professional applications</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Budget Options</h5>
+            <p class="card-text">Affordable GPUs that deliver great value</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

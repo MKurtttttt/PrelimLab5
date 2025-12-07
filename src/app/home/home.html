@@ -1,0 +1,67 @@
+<div class="container-fluid p-0">
+  <!-- Hero Section -->
+  <section class="hero-section bg-dark text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-3 fw-bold mb-4">SuperGPU Store</h1>
+      <p class="lead mb-4">Your Ultimate Destination for High-Performance Graphics Cards</p>
+      <p class="mb-4">Experience cutting-edge technology with the latest GPUs from top manufacturers</p>
+      <a routerLink="/products" class="btn btn-primary btn-lg px-4 py-3">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Why Choose SuperGPU?</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title">Latest Technology</h3>
+              <p class="card-text">Stay ahead with the newest GPU models and architectures. We stock the latest releases from NVIDIA and AMD as soon as they become available.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title">Premium Quality</h3>
+              <p class="card-text">Only authentic products from authorized distributors. Every GPU is verified and comes with full manufacturer documentation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title">Warranty Protected</h3>
+              <p class="card-text">Comprehensive warranty coverage on all products. We handle all warranty claims directly, making the process simple and stress-free.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Products Preview -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Featured Products</h2>
+      <div class="row g-4">
+        @for (product of featuredProducts; track product.name) {
+          <div class="col-md-4">
+            <div class="card">
+              <img [src]="product.imageUrl" [alt]="product.name" class="card-img-top featured-product-image" />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="text-center mt-5">
+        <a routerLink="/products" class="btn btn-outline-primary px-4 py-2">View All Products</a>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,135 @@
+h1 {
+  color: #1a1a1a;
+  font-weight: 800;
+  border-bottom: 4px solid #FFD700;
+  padding-bottom: 0.75rem;
+  display: inline-block;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #FFC107, #FFD700);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.table {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e8e8e8;
+}
+
+.table thead th {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  color: #FFD700;
+  padding: 1.25rem 1rem;
+  border-bottom: 3px solid #FFD700;
+}
+
+.table tbody td {
+  vertical-align: middle;
+  padding: 1.25rem 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td {
+  background-color: rgba(255, 215, 0, 0.03);
+}
+
+.table-hover > tbody > tr:hover > td {
+  background-color: rgba(255, 215, 0, 0.15);
+  transition: all 0.3s ease;
+  transform: scale(1.01);
+}
+
+.card {
+  border: 2px solid #e8e8e8;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.card:hover {
+  border-color: #FFD700;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
+}
+
+.card-body {
+  padding: 1.75rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.card:hover .card-title {
+  border-bottom-color: #FFD700;
+  color: #1a1a1a;
+}
+
+.display-6 {
+  color: #FFD700;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.badge {
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.mt-4 {
+  margin-top: 3rem;
+}
+
+.mt-4 h3 {
+  color: #1a1a1a;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #FFD700;
+  display: inline-block;
+}

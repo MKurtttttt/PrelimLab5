@@ -1,0 +1,83 @@
+<div class="container py-5">
+  <h1 class="mb-4">Employee Directory</h1>
+  <p class="lead mb-4">Meet the team behind SuperGPU Store</p>
+
+  @if (employees.length === 0) {
+    <div class="alert alert-warning">
+      No employees found.
+    </div>
+  } @else {
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>Employee Number</th>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Employment Status</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (employee of employees; track employee.employeeNumber) {
+            <tr>
+              <td>{{ employee.employeeNumber }}</td>
+              <td>{{ employee.fullName }}</td>
+              <td>
+                @if (employee.gender === 'Male') {
+                  <span class="badge bg-primary">{{ employee.gender }}</span>
+                } @else {
+                  <span class="badge bg-info">{{ employee.gender }}</span>
+                }
+              </td>
+              <td>{{ employee.email }}</td>
+              <td>
+                <span [class]="getStatusClass(employee.employmentStatus)">
+                  {{ employee.employmentStatus }}
+                </span>
+              </td>
+              <td [class]="getSalaryClass(employee.salary)">
+                ${{ employee.salary | number:'1.0-0' }}
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4">
+      <h3>Statistics</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Total Employees</h5>
+              <p class="card-text display-6">{{ employees.length }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Full-time Employees</h5>
+              <p class="card-text display-6">
+                {{ getFullTimeCount() }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Average Salary</h5>
+              <p class="card-text display-6">
+                ${{ getAverageSalary() | number:'1.0-0' }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
